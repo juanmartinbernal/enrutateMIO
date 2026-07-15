@@ -1,0 +1,20 @@
+*.iml
+.gradle/
+.idea/
+local.properties
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.ap_
+*.dex
+*.class
+
+# Kotlin
+*.kotlin_module
+
+# Gradle wrapper distribution (keep wrapper jar + properties, ignore extracted dists)
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties

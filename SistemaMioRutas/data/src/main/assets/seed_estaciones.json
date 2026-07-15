@@ -1,0 +1,924 @@
+[
+  {
+    "nombre": "UNIVERSIDADES",
+    "latitud": 3.366829,
+    "longitud": -76.528788,
+    "listadoRutas": [
+      "E21",
+      "E31",
+      "T31",
+      "P10B",
+      "P12A",
+      "P14A",
+      "P21A",
+      "P10A",
+      "P21B",
+      "P10D",
+      "P27C",
+      "A11",
+      "A14A",
+      "A13A",
+      "A13C",
+      "A17A",
+      "A17B",
+      "A18",
+      "A19A"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 100 - Cl. 16\n"
+  },
+  {
+    "nombre": "VERSALLES",
+    "latitud": 3.461043,
+    "longitud": -76.527296,
+    "listadoRutas": [
+      "E52",
+      "E21",
+      "E27",
+      "T42",
+      "P21A",
+      "P52D",
+      "A05"
+    ],
+    "tipo": "0",
+    "direccion": "Av. 3 - Cl. 21N"
+  },
+  {
+    "nombre": "UNIVALLE",
+    "latitud": 3.370674,
+    "longitud": -76.536298,
+    "listadoRutas": [
+      "T31",
+      "P10A",
+      "P27C"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 100 - Cl. 13\n"
+  },
+  {
+    "nombre": "BUITRERA",
+    "latitud": 3.372399,
+    "longitud": -76.540042,
+    "listadoRutas": [
+      "T31",
+      "E31",
+      "E21",
+      "P17",
+      "P27C",
+      "A19B"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 100 - Cl. 11A\n"
+  },
+  {
+    "nombre": "MELENDEZ",
+    "latitud": 3.378161,
+    "longitud": -76.543175,
+    "listadoRutas": [
+      "T31",
+      "E31",
+      "E21",
+      "P17",
+      "P27C",
+      "A12A",
+      "A12B"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 94\n"
+  },
+  {
+    "nombre": "CAPRI",
+    "latitud": 3.387843,
+    "longitud": -76.545278,
+    "listadoRutas": [
+      "E21",
+      "E27",
+      "E27B",
+      "E31",
+      "T31",
+      "T47A",
+      "P17",
+      "P27C",
+      "P27D",
+      "P74A",
+      "P74B",
+      "P47C",
+      "A77A",
+      "A12C"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 78\n"
+  },
+  {
+    "nombre": "CALDAS",
+    "latitud": 3.393487,
+    "longitud": -76.546201,
+    "listadoRutas": [
+      "E21",
+      "T31",
+      "T47A",
+      "P74A",
+      "P47C",
+      "P27C",
+      "A73",
+      "A78A",
+      "A77A"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 70\n"
+  },
+  {
+    "nombre": "REFUGIO",
+    "latitud": 3.398767,
+    "longitud": -76.546737,
+    "listadoRutas": [
+      "T47A",
+      "T31",
+      "P17",
+      "P27D",
+      "P47C",
+      "A77A"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 66\n"
+  },
+  {
+    "nombre": "PAMPALINDA",
+    "latitud": 3.402623,
+    "longitud": -76.546919,
+    "listadoRutas": [
+      "T31",
+      "T47A",
+      "E31",
+      "E21",
+      "E27",
+      "E27B",
+      "P47C"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 62\n"
+  },
+  {
+    "nombre": "PLAZA DE TOROS",
+    "latitud": 3.410066,
+    "longitud": -76.547692,
+    "listadoRutas": [
+      "T31",
+      "T47A",
+      "P47B",
+      "P27D",
+      "P27C",
+      "P71"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 56\n"
+  },
+  {
+    "nombre": "UNIDAD DEPORTIVA",
+    "latitud": 3.415217,
+    "longitud": -76.548518,
+    "listadoRutas": [
+      "E27B",
+      "T57A",
+      "T47B",
+      "T31",
+      "E37",
+      "E27",
+      "E31",
+      "E21",
+      "T47A",
+      "P47A",
+      "P47B",
+      "P17",
+      "P27C"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 52\n"
+  },
+  {
+    "nombre": "LIDO",
+    "latitud": 3.418837,
+    "longitud": -76.548443,
+    "listadoRutas": [
+      "E27",
+      "E27B",
+      "T31",
+      "T47A",
+      "T47B",
+      "T57A",
+      "P47B"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 44\n"
+  },
+  {
+    "nombre": "TEQUENDAMA",
+    "latitud": 3.423485,
+    "longitud": -76.547102,
+    "listadoRutas": [
+      "E21",
+      "E31",
+      "E37",
+      "T31",
+      "T47A",
+      "T47B",
+      "T57A",
+      "P27C",
+      "P47A",
+      "A76",
+      "A70"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 39\n"
+  },
+  {
+    "nombre": "ESTADIO",
+    "latitud": 3.431796,
+    "longitud": -76.543282,
+    "listadoRutas": [
+      "E21",
+      "E27",
+      "E27B",
+      "E31",
+      "T31",
+      "T47A",
+      "T47B",
+      "T57A",
+      "A76",
+      "A70"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 34\n"
+  },
+  {
+    "nombre": "MANZANA DEL SABER",
+    "latitud": 3.434902,
+    "longitud": -76.541104,
+    "listadoRutas": [
+      "E27",
+      "E37",
+      "E27B",
+      "T31",
+      "T47A",
+      "T47B",
+      "T57A",
+      "A04",
+      "A70"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 27\n"
+  },
+  {
+    "nombre": "SANTA LIBRADA",
+    "latitud": 3.439796,
+    "longitud": -76.537167,
+    "listadoRutas": [
+      "E37",
+      "T31",
+      "T47A",
+      "T47B",
+      "T57A",
+      "E27",
+      "A03",
+      "P27D"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 22\n"
+  },
+  {
+    "nombre": "SAN BOSCO",
+    "latitud": 3.442259,
+    "longitud": -76.532682,
+    "listadoRutas": [
+      "E21",
+      "E31",
+      "T31",
+      "T47A",
+      "T47B",
+      "T57A",
+      "P10B",
+      "A01A",
+      "A02",
+      "A06"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 9\n"
+  },
+  {
+    "nombre": "SAN PASCUAL",
+    "latitud": 3.442677,
+    "longitud": -76.527532,
+    "listadoRutas": [
+      "E21",
+      "E31",
+      "T31",
+      "T40",
+      "T47A",
+      "T47B",
+      "T57A",
+      "P10B",
+      "P30A",
+      "P10A",
+      "A01A"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 15\n"
+  },
+  {
+    "nombre": "SUCRE",
+    "latitud": 3.443908,
+    "longitud": -76.526545,
+    "listadoRutas": [
+      "T31",
+      "T40",
+      "P10D",
+      "P30A",
+      "A01A",
+      "P52D"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 15 - Cr. 15\n"
+  },
+  {
+    "nombre": "PETECUY",
+    "latitud": 3.449338,
+    "longitud": -76.528176,
+    "listadoRutas": [
+      "T31",
+      "T40",
+      "T42",
+      "P30A",
+      "P10D",
+      "P27D",
+      "P52D",
+      "T50",
+      "E21",
+      "P10A",
+      "A01A"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 15 - Cr. 8\n"
+  },
+  {
+    "nombre": "SAN PEDRO",
+    "latitud": 3.454596,
+    "longitud": -76.530354,
+    "listadoRutas": [
+      "E37",
+      "T31",
+      "T40",
+      "T42",
+      "T50",
+      "P30A",
+      "P40A",
+      "P10A",
+      "P52D",
+      "P27D",
+      "A01A"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 15 - Cr. 4\n"
+  },
+  {
+    "nombre": "TORRE DE CALI",
+    "latitud": 3.456824,
+    "longitud": -76.530408,
+    "listadoRutas": [
+      "T31",
+      "E52",
+      "E21",
+      "E37",
+      "E31",
+      "P30A",
+      "P24B",
+      "P27D",
+      "P52C",
+      "A01A"
+    ],
+    "tipo": "0",
+    "direccion": "Av. 3 - Cl. 15"
+  },
+  {
+    "nombre": "ERMITA",
+    "latitud": 3.453938,
+    "longitud": -76.531899,
+    "listadoRutas": [
+      "E37",
+      "T31",
+      "T40",
+      "T50",
+      "P30A",
+      "P40A",
+      "P10A",
+      "P10D"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 13 - Cr. 4\n"
+  },
+  {
+    "nombre": "PLAZA DE CAYCEDO",
+    "latitud": 3.452385,
+    "longitud": -76.531497,
+    "listadoRutas": [
+      "E21",
+      "P52D",
+      "P72"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 13 - Cr. 4\n"
+  },
+  {
+    "nombre": "CENTRO",
+    "latitud": 3.448246,
+    "longitud": -76.530209,
+    "listadoRutas": [
+      "E37",
+      "T31",
+      "T40",
+      "T42",
+      "T50",
+      "P30A",
+      "P40A",
+      "P52D"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 13 - Cr. 8\n"
+  },
+  {
+    "nombre": "SANTA ROSA",
+    "latitud": 3.447143,
+    "longitud": -76.529887,
+    "listadoRutas": [
+      "P10A",
+      "P72"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 13 - Cr. 8\n"
+  },
+  {
+    "nombre": "FRAY DAMIAN",
+    "latitud": 3.443314,
+    "longitud": -76.528922,
+    "listadoRutas": [
+      "T31",
+      "T40",
+      "T42",
+      "T50",
+      "P30A",
+      "P10A",
+      "P52D",
+      "P72",
+      "P10D"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 13 - Cr. 15\n"
+  },
+  {
+    "nombre": "SAN NICOLAS",
+    "latitud": 3.458527,
+    "longitud": -76.525923,
+    "listadoRutas": [
+      "T31"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl.21"
+  },
+  {
+    "nombre": "PILOTO",
+    "latitud": 3.460128,
+    "longitud": -76.522629,
+    "listadoRutas": [
+      "T31"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl. 24"
+  },
+  {
+    "nombre": "FATIMA",
+    "latitud": 3.462918,
+    "longitud": -76.517544,
+    "listadoRutas": [
+      "T31"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl. 30"
+  },
+  {
+    "nombre": "MANZANARES",
+    "latitud": 3.466248,
+    "longitud": -76.513478,
+    "listadoRutas": [
+      "T31"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl. 39"
+  },
+  {
+    "nombre": "POPULAR",
+    "latitud": 3.469124,
+    "longitud": -76.511246,
+    "listadoRutas": [
+      "E31",
+      "E37",
+      "T31",
+      "A33"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl. 44"
+  },
+  {
+    "nombre": "SALOMIA",
+    "latitud": 3.473777,
+    "longitud": -76.506869,
+    "listadoRutas": [
+      "E31",
+      "E37",
+      "T31",
+      "A37A"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl. 47"
+  },
+  {
+    "nombre": "FLORA INDUSTRIAL",
+    "latitud": 3.478301,
+    "longitud": -76.502389,
+    "listadoRutas": [
+      "E31",
+      "E37",
+      "T31",
+      "P30A",
+      "A32"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl. 56"
+  },
+  {
+    "nombre": "CHIMINANGOS",
+    "latitud": 3.481466,
+    "longitud": -76.498436,
+    "listadoRutas": [
+      "E31",
+      "E37",
+      "T31",
+      "P30A",
+      "P12A",
+      "P24A",
+      "P52D",
+      "A31",
+      "A34",
+      "A35",
+      "A36",
+      "A33"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 1 - Cl. 62"
+  },
+  {
+    "nombre": "LAS AMÉRICAS",
+    "latitud": 3.463999,
+    "longitud": -76.525204,
+    "listadoRutas": [
+      "E21",
+      "E27",
+      "E27B",
+      "P21A",
+      "P52D",
+      "A05"
+    ],
+    "tipo": "0",
+    "direccion": "Av. 3 - Cl. 24N"
+  },
+  {
+    "nombre": "PRADOS DEL NORTE",
+    "latitud": 3.474269,
+    "longitud": -76.519808,
+    "listadoRutas": [
+      "E21",
+      "E27",
+      "E27B",
+      "A24"
+    ],
+    "tipo": "0",
+    "direccion": "Av. 3 - Cl. 38N"
+  },
+  {
+    "nombre": "VIPASA",
+    "latitud": 3.478414,
+    "longitud": -76.517233,
+    "listadoRutas": [
+      "E21",
+      "E27",
+      "E27B",
+      "A24"
+    ],
+    "tipo": "0",
+    "direccion": "Av. 3 - Cl. 44N"
+  },
+  {
+    "nombre": "ALAMOS",
+    "latitud": 3.484154,
+    "longitud": -76.513649,
+    "listadoRutas": [
+      "E21",
+      "E27",
+      "E27B",
+      "P27D",
+      "A23"
+    ],
+    "tipo": "0",
+    "direccion": "Av. 3 - Cl. 52N"
+  },
+  {
+    "nombre": "BELALCAZAR",
+    "latitud": 3.444155,
+    "longitud": -76.520956,
+    "listadoRutas": [
+      "T40",
+      "T42",
+      "T47A",
+      "T47B"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 21"
+  },
+  {
+    "nombre": "FLORESTA",
+    "latitud": 3.445333,
+    "longitud": -76.514701,
+    "listadoRutas": [
+      "T40",
+      "T42",
+      "T47A",
+      "T47B"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 30"
+  },
+  {
+    "nombre": "ATANASIO GIRARDOT",
+    "latitud": 3.444883,
+    "longitud": -76.508424,
+    "listadoRutas": [
+      "T40",
+      "T42",
+      "T47A",
+      "T47B"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 34"
+  },
+  {
+    "nombre": "CHAPINERO",
+    "latitud": 3.444423,
+    "longitud": -76.502416,
+    "listadoRutas": [
+      "T40",
+      "T42",
+      "T47A",
+      "T47B"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 44"
+  },
+  {
+    "nombre": "VILLA COLOMBIA",
+    "latitud": 3.443994,
+    "longitud": -76.498972,
+    "listadoRutas": [
+      "T40",
+      "T42",
+      "T47A",
+      "T47B",
+      "P27C"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 52"
+  },
+  {
+    "nombre": "EL TREBOL",
+    "latitud": 3.443651,
+    "longitud": -76.496118,
+    "listadoRutas": [
+      "T40",
+      "T47A",
+      "T47B",
+      "P27C",
+      "A45"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 52"
+  },
+  {
+    "nombre": "7 DE AGOSTO",
+    "latitud": 3.445279,
+    "longitud": -76.487203,
+    "listadoRutas": [
+      "T40",
+      "T47A",
+      "T47B",
+      "P41B",
+      "P47B",
+      "P74B",
+      "A46"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 70"
+  },
+  {
+    "nombre": "TERMINAL ANDRÉS SANÍN",
+    "latitud": 3.443748,
+    "longitud": -76.482353,
+    "listadoRutas": [
+      "T40",
+      "T47A",
+      "T47B",
+      "P12A",
+      "P41B",
+      "P47B",
+      "P24A",
+      "P24B",
+      "P40A",
+      "P47A",
+      "P47C",
+      "A41A",
+      "A41B",
+      "A42A",
+      "A42B",
+      "A44A",
+      "A44B",
+      "A45",
+      "A46",
+      "A47",
+      "A53"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 15 - Cl. 73"
+  },
+  {
+    "nombre": "TERMINAL MENGA",
+    "latitud": 3.489176,
+    "longitud": -76.508896,
+    "listadoRutas": [
+      "E21",
+      "E27",
+      "E27B",
+      "P12A",
+      "P21B",
+      "P24A",
+      "P27A",
+      "P27C",
+      "P27D",
+      "P30A",
+      "A21",
+      "A22",
+      "A23"
+    ],
+    "tipo": "0",
+    "direccion": "Av. 3 - Cl. 70N"
+  },
+  {
+    "nombre": "CIEN PALOS",
+    "latitud": 3.439957,
+    "longitud": -76.523316,
+    "listadoRutas": [
+      "T50",
+      "T57A",
+      "P52D"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 17 Cl. 18"
+  },
+  {
+    "nombre": "PRIMITIVO",
+    "latitud": 3.437943,
+    "longitud": -76.518488,
+    "listadoRutas": [
+      "E52",
+      "T50",
+      "T57A",
+      "P52D"
+    ],
+    "tipo": "0",
+    "direccion": "Tr. 25 Dg. 18"
+  },
+  {
+    "nombre": "SANTA MONICA",
+    "latitud": 3.434516,
+    "longitud": -76.513853,
+    "listadoRutas": [
+      "E52",
+      "T50",
+      "T57A",
+      "P52D",
+      "P21A",
+      "P74A",
+      "P74B",
+      "A85",
+      "A84"
+    ],
+    "tipo": "0",
+    "direccion": "Tr. 25 Cr. 28"
+  },
+  {
+    "nombre": "VILLANUEVA",
+    "latitud": 3.432117,
+    "longitud": -76.510119,
+    "listadoRutas": [
+      "T50",
+      "T57A",
+      "P74A",
+      "P74B"
+    ],
+    "tipo": "0",
+    "direccion": "Tr. 25 Cl. 32"
+  },
+  {
+    "nombre": "CONQUISTADORES",
+    "latitud": 3.426848,
+    "longitud": -76.505313,
+    "listadoRutas": [
+      "E52",
+      "T50",
+      "T57A",
+      "P52C"
+    ],
+    "tipo": "0",
+    "direccion": "Tr. 25 Cl. 44"
+  },
+  {
+    "nombre": "TRONCAL UNIDA",
+    "latitud": 3.425006,
+    "longitud": -76.494627,
+    "listadoRutas": [
+      "E52",
+      "T50",
+      "T57A",
+      "A54"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 28D Cl. 72I"
+  },
+  {
+    "nombre": "NUEVO LATIR",
+    "latitud": 3.418409,
+    "longitud": -76.486945,
+    "listadoRutas": [
+      "E52",
+      "T50",
+      "T57A",
+      "P12A",
+      "P47C",
+      "A41A",
+      "A42A",
+      "A51",
+      "A52",
+      "A54"
+    ],
+    "tipo": "0",
+    "direccion": "Cr. 28D Cl. 80"
+  },
+  {
+    "nombre": "TERMINAL DE CAÑAVERALEJO",
+    "latitud": 3.414896,
+    "longitud": -76.549559,
+    "listadoRutas": [
+      "P27C",
+      "A70",
+      "A71",
+      "A72",
+      "A73",
+      "A74",
+      "A75",
+      "A76"
+    ],
+    "tipo": "0",
+    "direccion": "Cl. 5 - Cr. 52\n"
+  },
+  {
+    "nombre": "AMANECER",
+    "latitud": 3.421514,
+    "longitud": -76.490788,
+    "listadoRutas": [
+      "E52",
+      "P47C",
+      "A53"
+    ],
+    "tipo": "0",
+    "direccion": "Cra 28D con Cll 72V"
+  },
+  {
+    "nombre": "TERMINAL CALIPSO",
+    "latitud": 3.42608,
+    "longitud": -76.501016,
+    "listadoRutas": [
+      "E52",
+      "T50",
+      "T57A",
+      "P21B",
+      "P47B"
+    ],
+    "tipo": "0",
+    "direccion": "Calle 70 # 28E-1 a 28E-99"
+  }
+]
