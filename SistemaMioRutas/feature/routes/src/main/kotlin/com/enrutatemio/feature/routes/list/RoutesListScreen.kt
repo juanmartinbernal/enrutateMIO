@@ -22,6 +22,7 @@ import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -81,10 +82,11 @@ private fun RoutesListScreen(
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Volver")
                     }
                 },
+                windowInsets = TopAppBarDefaults.windowInsets,
             )
         },
     ) { padding ->
-        Column(modifier = Modifier.padding(top = padding.calculateTopPadding())) {
+        Column(modifier = Modifier.padding(padding)) {
             ScrollableTabRow(
                 selectedTabIndex = routeTypeLabels.keys.indexOf(state.selectedType).coerceAtLeast(0),
             ) {

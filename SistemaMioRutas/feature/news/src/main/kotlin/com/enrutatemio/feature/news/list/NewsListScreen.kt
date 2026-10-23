@@ -25,6 +25,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -58,10 +59,11 @@ private fun NewsListScreen(state: NewsListState, onIntent: (NewsListIntent) -> U
                         Icon(Icons.Default.Refresh, contentDescription = "Actualizar")
                     }
                 },
+                windowInsets = TopAppBarDefaults.windowInsets,
             )
         },
     ) { padding ->
-        Column(modifier = Modifier.padding(top = padding.calculateTopPadding())) {
+        Column(modifier = Modifier.padding(padding)) {
             if (state.isRefreshing) {
                 LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
             }
