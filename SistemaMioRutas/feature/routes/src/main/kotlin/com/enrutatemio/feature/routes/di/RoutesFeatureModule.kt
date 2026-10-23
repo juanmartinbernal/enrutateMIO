@@ -7,7 +7,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val routesFeatureModule = module {
-    viewModel { RoutesListViewModel(get()) }
+    viewModel { RoutesListViewModel(get(), get()) }
     viewModel { (routeCode: String, direction: RouteDirection) ->
         RouteStopsViewModel(routeCode, direction, get())
     }

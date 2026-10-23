@@ -1,5 +1,6 @@
 package com.enrutatemio.feature.routes.list
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.enrutatemio.core.common.mvi.BaseMviViewModel
 import com.enrutatemio.core.model.RouteType
@@ -7,8 +8,17 @@ import com.enrutatemio.domain.routes.GetRoutesByTypeUseCase
 import kotlinx.coroutines.launch
 
 class RoutesListViewModel(
+    savedStateHandle: SavedStateHandle,
     private val getRoutesByType: GetRoutesByTypeUseCase,
-) : BaseMviViewModel<RoutesListState, RoutesListIntent, RoutesListEffect>(RoutesListState()) {
+) : BaseMviViewModel<RoutesListState, RoutesListIntent, RoutesListEffect>(
+    RoutesListState(
+        selectedType = try {
+            RouteType.valueOf(savedStateHandle.get<String>("routeType") ?: RouteType.TRONCAL.name)
+        } catch (e: Exception) {
+            RouteType.TRONCAL
+        }
+    )
+) {
 
     init {
         loadRoutes(currentState.selectedType)

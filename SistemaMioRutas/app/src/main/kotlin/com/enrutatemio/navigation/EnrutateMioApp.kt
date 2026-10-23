@@ -15,6 +15,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.enrutatemio.feature.feeders.navigation.FEEDERS_ROUTE
 import com.enrutatemio.feature.feeders.navigation.feedersScreen
 import com.enrutatemio.feature.map.navigation.mapScreen
 import com.enrutatemio.feature.news.navigation.newsScreen
@@ -57,7 +58,10 @@ fun EnrutateMioApp() {
             startDestination = TopLevelDestination.ROUTES.route,
             modifier = Modifier.padding(padding),
         ) {
-            routesGraph(navController)
+            routesGraph(
+                navController = navController,
+                onNavigateToFeeders = { navController.navigate(FEEDERS_ROUTE) },
+            )
             feedersScreen(navController)
             mapScreen()
             newsScreen()

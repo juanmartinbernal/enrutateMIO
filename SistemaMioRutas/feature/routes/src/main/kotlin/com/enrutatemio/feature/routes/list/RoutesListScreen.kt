@@ -8,13 +8,19 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -41,6 +47,7 @@ private val routeTypeLabels = mapOf(
 @Composable
 fun RoutesListRoute(
     onNavigateToStops: (routeCode: String, direction: RouteDirection) -> Unit,
+    onBack: () -> Unit,
     viewModel: RoutesListViewModel = koinViewModel(),
 ) {
     val state by viewModel.state.collectAsState()
@@ -53,15 +60,28 @@ fun RoutesListRoute(
         }
     }
 
-    RoutesListScreen(state = state, onIntent = viewModel::onIntent)
+    RoutesListScreen(state = state, onIntent = viewModel::onIntent, onBack = onBack)
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun RoutesListScreen(
     state: RoutesListState,
     onIntent: (RoutesListIntent) -> Unit,
+    onBack: () -> Unit,
 ) {
-    Scaffold { padding ->
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(routeTypeLabels[state.selectedType] ?: "Rutas") },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
+                    }
+                },
+            )
+        },
+    ) { padding ->
         Column(modifier = Modifier.padding(padding)) {
             ScrollableTabRow(
                 selectedTabIndex = routeTypeLabels.keys.indexOf(state.selectedType).coerceAtLeast(0),
@@ -152,14 +172,19 @@ private fun DirectionRow(
     route: TransitRoute,
     onSelectDirection: (RouteDirection) -> Unit,
 ) {
-    val summary = route.summaryFor(direction) ?: return
-    Text(
-        text = "$label: $summary",
-        style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.primary,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 6.dp)
-            .clickable { onSelectDirection(direction) },
-    )
+    val stops = when (direction) {
+        RouteDirection.NORTE_SUR -> route.northToSouthStops
+        RouteDirection.SUR_NORTE -> route.southToNorthStops
+    }
+    if (stops.isNotEmpty()) {
+        Text(
+            text = "$label (${stops.size} paradas)",
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { onSelectDirection(direction) }
+                .padding(vertical = 4.dp),
+        )
+    }
 }
