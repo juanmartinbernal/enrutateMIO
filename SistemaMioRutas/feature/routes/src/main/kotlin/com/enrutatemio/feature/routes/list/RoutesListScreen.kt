@@ -4,7 +4,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,11 +17,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.ScrollableTabRow
-import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -41,9 +37,9 @@ import com.enrutatemio.core.ui.components.SearchField
 import org.koin.androidx.compose.koinViewModel
 
 private val routeTypeLabels = mapOf(
-    RouteType.TRONCAL to "Troncal",
-    RouteType.PRETRONCAL to "Pretroncal",
-    RouteType.EXPRESO to "Expreso",
+    RouteType.TRONCAL to "Troncales",
+    RouteType.PRETRONCAL to "Pretroncales",
+    RouteType.EXPRESO to "Expresos",
 )
 
 @Composable
@@ -72,33 +68,20 @@ private fun RoutesListScreen(
     onIntent: (RoutesListIntent) -> Unit,
     onBack: () -> Unit,
 ) {
+    val title = routeTypeLabels[state.selectedType] ?: "Rutas"
     Scaffold(
-        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             TopAppBar(
-                title = { Text(routeTypeLabels[state.selectedType] ?: "Rutas") },
+                title = { Text(title) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Volver")
                     }
                 },
-                windowInsets = TopAppBarDefaults.windowInsets,
             )
         },
     ) { padding ->
         Column(modifier = Modifier.padding(padding)) {
-            ScrollableTabRow(
-                selectedTabIndex = routeTypeLabels.keys.indexOf(state.selectedType).coerceAtLeast(0),
-            ) {
-                routeTypeLabels.forEach { (type, label) ->
-                    Tab(
-                        selected = state.selectedType == type,
-                        onClick = { onIntent(RoutesListIntent.SelectType(type)) },
-                        text = { Text(label) },
-                    )
-                }
-            }
-
             SearchField(
                 query = state.query,
                 onQueryChange = { onIntent(RoutesListIntent.Search(it)) },

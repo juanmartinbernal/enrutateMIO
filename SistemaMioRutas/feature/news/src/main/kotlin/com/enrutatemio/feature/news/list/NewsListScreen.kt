@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -25,7 +24,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -50,7 +48,6 @@ fun NewsListRoute(viewModel: NewsListViewModel = koinViewModel()) {
 @Composable
 private fun NewsListScreen(state: NewsListState, onIntent: (NewsListIntent) -> Unit) {
     Scaffold(
-        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             TopAppBar(
                 title = { Text("Noticias") },
@@ -59,7 +56,6 @@ private fun NewsListScreen(state: NewsListState, onIntent: (NewsListIntent) -> U
                         Icon(Icons.Default.Refresh, contentDescription = "Actualizar")
                     }
                 },
-                windowInsets = TopAppBarDefaults.windowInsets,
             )
         },
     ) { padding ->
