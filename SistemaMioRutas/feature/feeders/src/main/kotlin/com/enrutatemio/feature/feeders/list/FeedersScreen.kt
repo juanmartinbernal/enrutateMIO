@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -52,8 +53,10 @@ fun FeedersRoute(
 
 @Composable
 private fun FeedersScreen(state: FeedersState, onIntent: (FeedersIntent) -> Unit) {
-    Scaffold { padding ->
-        Column(modifier = Modifier.padding(padding)) {
+    Scaffold(
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
+    ) { padding ->
+        Column(modifier = Modifier.padding(top = padding.calculateTopPadding())) {
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -82,7 +85,7 @@ private fun FeedersScreen(state: FeedersState, onIntent: (FeedersIntent) -> Unit
                 )
                 state.filteredRoutes.isEmpty() -> FullScreenEmpty("No hay alimentadores en esta zona")
                 else -> LazyColumn(
-                    contentPadding = PaddingValues(16.dp),
+                    contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 80.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     items(state.filteredRoutes, key = { it.code }) { route ->

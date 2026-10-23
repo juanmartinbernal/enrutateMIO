@@ -32,7 +32,7 @@ fun EnrutateMioApp() {
             val backStackEntry by navController.currentBackStackEntryAsState()
             val currentDestination = backStackEntry?.destination
 
-            NavigationBar {
+NavigationBar {
                 TopLevelDestination.entries.forEach { destination ->
                     val selected = currentDestination?.hierarchy?.any { it.route == destination.route } == true
                     NavigationBarItem(

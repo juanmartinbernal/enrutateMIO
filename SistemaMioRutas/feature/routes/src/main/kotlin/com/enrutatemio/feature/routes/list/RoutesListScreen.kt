@@ -4,12 +4,13 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -71,18 +72,19 @@ private fun RoutesListScreen(
     onBack: () -> Unit,
 ) {
     Scaffold(
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             TopAppBar(
                 title = { Text(routeTypeLabels[state.selectedType] ?: "Rutas") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Volver")
                     }
                 },
             )
         },
     ) { padding ->
-        Column(modifier = Modifier.padding(padding)) {
+        Column(modifier = Modifier.padding(top = padding.calculateTopPadding())) {
             ScrollableTabRow(
                 selectedTabIndex = routeTypeLabels.keys.indexOf(state.selectedType).coerceAtLeast(0),
             ) {
@@ -110,7 +112,7 @@ private fun RoutesListScreen(
                 )
                 state.filteredRoutes.isEmpty() -> FullScreenEmpty("No se encontraron rutas")
                 else -> LazyColumn(
-                    contentPadding = PaddingValues(16.dp),
+                    contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 80.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     items(state.filteredRoutes, key = { it.code }) { route ->

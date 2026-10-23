@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -48,6 +49,7 @@ fun NewsListRoute(viewModel: NewsListViewModel = koinViewModel()) {
 @Composable
 private fun NewsListScreen(state: NewsListState, onIntent: (NewsListIntent) -> Unit) {
     Scaffold(
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
             TopAppBar(
                 title = { Text("Noticias") },
@@ -59,14 +61,14 @@ private fun NewsListScreen(state: NewsListState, onIntent: (NewsListIntent) -> U
             )
         },
     ) { padding ->
-        Column(modifier = Modifier.padding(padding)) {
+        Column(modifier = Modifier.padding(top = padding.calculateTopPadding())) {
             if (state.isRefreshing) {
                 LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
             }
             when {
                 state.isLoading -> FullScreenLoading()
                 state.news.isEmpty() -> FullScreenEmpty("No hay noticias por el momento")
-                else -> LazyColumn(contentPadding = PaddingValues(16.dp)) {
+                else -> LazyColumn(contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 80.dp)) {
                     items(state.news, key = { it.id }) { news ->
                         NewsCard(news, onClick = { onIntent(NewsListIntent.MarkAsRead(news.id)) })
                     }

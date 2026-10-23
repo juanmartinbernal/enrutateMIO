@@ -1,7 +1,10 @@
 package com.enrutatemio.feature.map.trip
 
 import android.Manifest
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
@@ -9,7 +12,6 @@ import androidx.compose.material.icons.filled.Layers
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -17,16 +19,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.GoogleMap
@@ -36,6 +38,7 @@ import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
+import com.enrutatemio.core.designsystem.R as DesignR
 import com.enrutatemio.core.model.Coordinates
 import com.enrutatemio.core.model.Station
 import kotlinx.coroutines.launch
@@ -59,43 +62,48 @@ fun MapTripRoute(viewModel: MapTripViewModel = koinViewModel()) {
         }
     }
 
-    Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) },
-        floatingActionButton = {
-            Box {
-                FloatingActionButton(onClick = { viewModel.onIntent(MapTripIntent.ToggleMapType) }) {
-                    Icon(Icons.Default.Layers, contentDescription = "Cambiar tipo de mapa")
-                }
-            }
-        },
-    ) { padding ->
-        Box(modifier = Modifier.padding(padding)) {
-            MapTripContent(
-                state = state,
-                isLocationPermissionGranted = locationPermissionState.status.isGranted,
-                onMapTapped = { viewModel.onIntent(MapTripIntent.MapTapped(it)) },
-            )
+    Box(modifier = Modifier.fillMaxSize()) {
+        MapTripContent(
+            state = state,
+            isLocationPermissionGranted = locationPermissionState.status.isGranted,
+            onMapTapped = { viewModel.onIntent(MapTripIntent.MapTapped(it)) },
+        )
 
-            if (state.hasRoute) {
-                FloatingActionButton(
-                    onClick = { viewModel.onIntent(MapTripIntent.ClearRoute) },
-                    modifier = Modifier
-                        .align(Alignment.BottomStart)
-                        .padding(16.dp),
-                ) {
-                    Icon(Icons.Default.Clear, contentDescription = "Quitar recorrido")
-                }
-            }
+        FloatingActionButton(
+            onClick = { viewModel.onIntent(MapTripIntent.ToggleMapType) },
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(16.dp),
+        ) {
+            Icon(Icons.Default.Layers, contentDescription = "Cambiar tipo de mapa")
+        }
 
-            state.directions?.let { directions ->
-                Text(
-                    text = "${directions.durationText} · ${directions.distanceText}",
-                    modifier = Modifier
-                        .align(Alignment.TopCenter)
-                        .padding(16.dp),
-                )
+        if (state.hasRoute) {
+            FloatingActionButton(
+                onClick = { viewModel.onIntent(MapTripIntent.ClearRoute) },
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(start = 16.dp, bottom = 80.dp),
+            ) {
+                Icon(Icons.Default.Clear, contentDescription = "Quitar recorrido")
             }
         }
+
+        state.directions?.let { directions ->
+            Text(
+                text = "${directions.durationText} · ${directions.distanceText}",
+                modifier = Modifier
+                    .align(Alignment.TopCenter)
+                    .padding(top = 16.dp),
+            )
+        }
+
+        SnackbarHost(
+            hostState = snackbarHostState,
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 80.dp),
+        )
     }
 }
 
@@ -113,7 +121,7 @@ private fun MapTripContent(
     }
 
     GoogleMap(
-        modifier = Modifier.padding(0.dp),
+        modifier = Modifier.fillMaxSize(),
         cameraPositionState = cameraPositionState,
         properties = MapProperties(
             isMyLocationEnabled = isLocationPermissionGranted,
@@ -141,9 +149,21 @@ private fun MapTripContent(
 
 @Composable
 private fun StationMarker(station: Station) {
+    val context = LocalContext.current
+    val icon = remember {
+        try {
+            val bitmap = BitmapFactory.decodeResource(context.resources, DesignR.drawable.iconoestacionhd)
+            val scaledBitmap = Bitmap.createScaledBitmap(bitmap, 72, 72, false)
+            BitmapDescriptorFactory.fromBitmap(scaledBitmap)
+        } catch (_: Exception) {
+            null
+        }
+    }
+
     Marker(
         state = MarkerState(LatLng(station.coordinates.latitude, station.coordinates.longitude)),
         title = station.name,
         snippet = station.address,
+        icon = icon,
     )
 }

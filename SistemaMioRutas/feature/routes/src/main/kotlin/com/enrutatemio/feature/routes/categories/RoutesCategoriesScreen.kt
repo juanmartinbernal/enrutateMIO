@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -29,12 +30,14 @@ fun RoutesCategoriesRoute(
     onSelectType: (RouteType) -> Unit,
     onSelectFeeders: () -> Unit,
 ) {
-    Scaffold { padding ->
+    Scaffold(
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
+    ) { padding ->
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding),
-            contentPadding = PaddingValues(16.dp),
+                .padding(top = padding.calculateTopPadding()),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 80.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             item {

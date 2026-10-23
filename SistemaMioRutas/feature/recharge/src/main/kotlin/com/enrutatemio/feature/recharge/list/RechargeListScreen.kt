@@ -2,6 +2,7 @@ package com.enrutatemio.feature.recharge.list
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -31,8 +32,10 @@ fun RechargeListRoute(viewModel: RechargeListViewModel = koinViewModel()) {
 
 @Composable
 private fun RechargeListScreen(state: RechargeListState, onIntent: (RechargeListIntent) -> Unit) {
-    Scaffold { padding ->
-        Column(modifier = Modifier.padding(padding)) {
+    Scaffold(
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
+    ) { padding ->
+        Column(modifier = Modifier.padding(top = padding.calculateTopPadding())) {
             SearchField(
                 query = state.query,
                 onQueryChange = { onIntent(RechargeListIntent.Search(it)) },
@@ -47,7 +50,7 @@ private fun RechargeListScreen(state: RechargeListState, onIntent: (RechargeList
                     onRetry = { onIntent(RechargeListIntent.Retry) },
                 )
                 state.points.isEmpty() -> FullScreenEmpty("No se encontraron puntos de recarga")
-                else -> LazyColumn(contentPadding = PaddingValues(bottom = 16.dp)) {
+                else -> LazyColumn(contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 80.dp)) {
                     items(state.points, key = { it.id }) { point ->
                         RechargePointRow(point)
                         HorizontalDivider()
@@ -60,6 +63,11 @@ private fun RechargeListScreen(state: RechargeListState, onIntent: (RechargeList
 
 @Composable
 private fun RechargePointRow(point: RechargePoint) {
+    NestedListItem(point)
+}
+
+@Composable
+private fun NestedListItem(point: RechargePoint) {
     ListItem(
         headlineContent = { Text(point.name, style = MaterialTheme.typography.bodyLarge) },
         supportingContent = { Text(point.address, style = MaterialTheme.typography.bodyMedium) },
