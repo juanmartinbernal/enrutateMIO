@@ -12,7 +12,9 @@ val databaseModule = module {
             androidContext(),
             EnrutateDatabase::class.java,
             EnrutateDatabase.DATABASE_NAME,
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     single { get<EnrutateDatabase>().estacionDao() }

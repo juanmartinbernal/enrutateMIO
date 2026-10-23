@@ -9,7 +9,7 @@ data class SeedEstacionDto(
     val latitud: Double?,
     val longitud: Double?,
     val listadoRutas: List<String> = emptyList(),
-    val tipo: String,
+    val tipo: String? = null,
     val direccion: String = "",
 )
 
@@ -18,7 +18,7 @@ data class SeedRutaParadaDto(
     val ruta: String,
     val sentido: String,
     val paradas: List<String> = emptyList(),
-    val tipo: String,
+    val tipo: String? = null,
     val zona: String? = null,
     val estado: String = "A",
     val trayecto: String? = null,

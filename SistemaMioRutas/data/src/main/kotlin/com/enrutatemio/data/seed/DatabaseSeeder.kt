@@ -47,7 +47,7 @@ class DatabaseSeeder(
                 latitud = it.latitud!!,
                 longitud = it.longitud!!,
                 listadoRutas = it.listadoRutas,
-                tipo = it.tipo,
+                tipo = it.tipo.orEmpty(),
                 direccion = it.direccion,
             )
         }
@@ -63,7 +63,7 @@ class DatabaseSeeder(
                 ruta = it.ruta,
                 sentido = it.sentido,
                 paradas = it.paradas,
-                tipo = it.tipo,
+                tipo = it.tipo ?: "troncal",
                 zona = it.zona,
                 estado = it.estado,
                 trayecto = it.trayecto,
