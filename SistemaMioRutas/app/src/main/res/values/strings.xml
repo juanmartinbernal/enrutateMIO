@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Enrútate MIO</string>
+    <string name="about_developers">Jeison Molina\nJuan Martín Bernal\nCarlos Castaño\nEdwin Ospina</string>
+    <string name="about_designer">Juan Carlos Caicedo</string>
+    <string name="about_copyright">Todos los derechos reservados 2014</string>
 </resources>

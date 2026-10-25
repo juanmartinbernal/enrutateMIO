@@ -29,6 +29,7 @@ import com.enrutatemio.core.model.RouteType
 fun RoutesCategoriesRoute(
     onSelectType: (RouteType) -> Unit,
     onSelectFeeders: () -> Unit,
+    onSelectRecharge: () -> Unit,
 ) {
     Scaffold(
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
@@ -78,6 +79,14 @@ fun RoutesCategoriesRoute(
                     description = "Rutas zonales de alimentación",
                     iconRes = DesignR.drawable.boton_alimentador,
                     onClick = onSelectFeeders,
+                )
+            }
+            item {
+                RouteCategoryCard(
+                    title = "Recargas",
+                    description = "Puntos de recarga de tarjeta MIO",
+                    iconRes = com.enrutatemio.feature.routes.R.drawable.iconotarjetarecarga,
+                    onClick = onSelectRecharge,
                 )
             }
         }

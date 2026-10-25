@@ -10,6 +10,7 @@ import com.enrutatemio.core.model.RouteDirection
 import com.enrutatemio.feature.routes.categories.RoutesCategoriesRoute
 import com.enrutatemio.feature.routes.list.RoutesListRoute
 import com.enrutatemio.feature.routes.stops.RouteStopsRoute
+import com.enrutatemio.feature.recharge.navigation.rechargeScreen
 
 const val ROUTES_GRAPH_ROUTE = "routes_graph"
 private const val ROUTES_CATEGORIES_ROUTE = "routes_categories"
@@ -18,6 +19,7 @@ private const val ARG_ROUTE_TYPE = "routeType"
 private const val ROUTE_STOPS_ROUTE = "route_stops"
 private const val ARG_ROUTE_CODE = "routeCode"
 private const val ARG_DIRECTION = "direction"
+private const val ROUTES_RECHARGE_ROUTE = "routes_recharge"
 
 fun routeStopsDestination(routeCode: String, direction: RouteDirection): String =
     "$ROUTE_STOPS_ROUTE/$routeCode/${direction.name}"
@@ -33,6 +35,9 @@ fun NavGraphBuilder.routesGraph(
                     navController.navigate("$ROUTES_LIST_ROUTE/${routeType.name}")
                 },
                 onSelectFeeders = onNavigateToFeeders,
+                onSelectRecharge = {
+                    navController.navigate(ROUTES_RECHARGE_ROUTE)
+                },
             )
         }
         composable(
@@ -58,6 +63,9 @@ fun NavGraphBuilder.routesGraph(
                 backStackEntry.arguments?.getString(ARG_DIRECTION) ?: RouteDirection.NORTE_SUR.name,
             )
             RouteStopsRoute(routeCode = code, direction = direction, onBack = navController::popBackStack)
+        }
+        composable(ROUTES_RECHARGE_ROUTE) {
+            rechargeScreen()
         }
     }
 }

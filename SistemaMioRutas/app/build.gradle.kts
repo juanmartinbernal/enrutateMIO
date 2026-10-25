@@ -56,6 +56,8 @@ dependencies {
     implementation(project(":feature:recharge"))
     implementation(project(":feature:map"))
     implementation(project(":feature:news"))
+    implementation(project(":feature:about"))
+    implementation(project(":feature:integration"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)

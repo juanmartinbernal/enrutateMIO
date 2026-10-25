@@ -5,3 +5,7 @@ plugins {
 android {
     namespace = "com.enrutatemio.feature.routes"
 }
+
+dependencies {
+    implementation(project(":feature:recharge"))
+}

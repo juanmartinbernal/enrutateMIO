@@ -15,11 +15,12 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.enrutatemio.feature.about.navigation.aboutScreen
 import com.enrutatemio.feature.feeders.navigation.FEEDERS_ROUTE
 import com.enrutatemio.feature.feeders.navigation.feedersScreen
+import com.enrutatemio.feature.integration.navigation.integrationScreen
 import com.enrutatemio.feature.map.navigation.mapScreen
 import com.enrutatemio.feature.news.navigation.newsScreen
-import com.enrutatemio.feature.recharge.navigation.rechargeScreen
 import com.enrutatemio.feature.routes.navigation.routesGraph
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -65,7 +66,8 @@ NavigationBar {
             feedersScreen(navController)
             mapScreen()
             newsScreen()
-            rechargeScreen()
+            integrationScreen()
+            aboutScreen()
         }
     }
 }
