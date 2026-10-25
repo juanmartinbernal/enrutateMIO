@@ -19,5 +19,5 @@ enum class TopLevelDestination(val route: String, val label: String, val icon: I
     MAP(MAP_ROUTE, "Mapa", Icons.Default.Map),
     NEWS(NEWS_ROUTE, "Noticias", Icons.Default.Newspaper),
     INTEGRATION(INTEGRATION_ROUTE, "Integración", Icons.Default.MergeType),
-    ABOUT(ABOUT_ROUTE, "Acerca de", Icons.Default.Info),
+    ABOUT(ABOUT_ROUTE, "Acerca", Icons.Default.Info),
 }

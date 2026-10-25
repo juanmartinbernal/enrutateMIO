@@ -10,7 +10,7 @@ import com.enrutatemio.core.model.RouteDirection
 import com.enrutatemio.feature.routes.categories.RoutesCategoriesRoute
 import com.enrutatemio.feature.routes.list.RoutesListRoute
 import com.enrutatemio.feature.routes.stops.RouteStopsRoute
-import com.enrutatemio.feature.recharge.navigation.rechargeScreen
+import com.enrutatemio.feature.recharge.list.RechargeListRoute
 
 const val ROUTES_GRAPH_ROUTE = "routes_graph"
 private const val ROUTES_CATEGORIES_ROUTE = "routes_categories"
@@ -65,7 +65,7 @@ fun NavGraphBuilder.routesGraph(
             RouteStopsRoute(routeCode = code, direction = direction, onBack = navController::popBackStack)
         }
         composable(ROUTES_RECHARGE_ROUTE) {
-            rechargeScreen()
+            RechargeListRoute()
         }
     }
 }
